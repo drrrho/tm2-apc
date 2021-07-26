@@ -1,0 +1,61 @@
+# APC UPS background knowledge
+
+ups-software < software
+
+ups-protocol < protocol
+
+apc isa ontology ~ http://templescript.org/ns/apc/
+
+apc:upsd isa ups-software
+! apcupsd
+description: daemon for controlling APC UPSes
+homepage: http://www.apcupsd.org/
+manual: http://www.apcupsd.org/manual/manual.html
+wiki: https://wiki.debian.org/apcupsd
+wikipedia: https://en.wikipedia.org/wiki/Apcupsd
+
+apc:smart isa ups-protocol
+! apcsmart
+description : uses RS232 serial connections
+
+apc:usb isa ups-protocol
+! APC usb
+
+apc:net isa ups-protocol
+
+apc:snmp isa ups-protocol
+
+apc:pcnet isa ups-protocol
+
+apc:dumb isa ups-protocol
+
+apc:modbus isa ups-protocol
+
+#--
+
+apc:APC isa company
+! APC Schneider Electric
+history: founded 1981, acquired by Schneider Electric 2006
+homepage: https://www.apc.com/us/en/
+
+isa offering:
+   offer: apc:smart-ups
+   organisation: apc:APC
+
+apc:smart-ups < hardware
+! APC uninteruptable power supplies
+wikipedia: https://en.wikipedia.org/wiki/APC_Smart-UPS
+oc: http://www.apc.com/salestools/JSII-5YQSBR/JSII-5YQSBR_R1_EN.pdf
+
+isa offering:
+   offer: apc:powerchute
+   organisation: apc:APC
+
+apc:powerchute isa ups-software
+! PowerChute
+oc: https://www.apc.com/shop/at/de/categories/power/uninterruptible-power-supply-ups-/ups-management/powerchute-business-edition/N-o29ysx
+
+
+%cancel
+
+windows OS X linux solaris
